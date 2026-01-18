@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voxio — Latest Gadgets</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #cfcfcf;
+      --secondary: #0d0d0d;
+      --accent: #ffffff;
+      --glass: rgba(255,255,255,0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--secondary);
+      color: var(--accent);
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+        section {
+    min-height: 100vh;
+    padding: 160px 20px 80px;
+    max-width: 1200px;
+    margin: auto;
+    }
+    .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    min-height: 80vh;
+    text-align: left;
+    }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+        .hero {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .hero-text {
+            max-width: 100%;
+        }
+
+        .carousel {
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      color: var(--primary);
+    }
+
+    .hero-text p {
+      margin: 20px 0;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      text-decoration: none;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+      background: var(--primary);
+      color: #000;
+      transform: translateY(-3px);
+    }
+
+    .hero-img {
+      position: relative;
+      width: 100%;
+      height: 350px;
+      background: linear-gradient(135deg, #444, #111);
+      border-radius: 30px;
+      box-shadow: 0 0 40px rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-img::before {
+      content: 'VOXIO';
+      font-size: 5rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.05);
+      position: absolute;
+    }
+
+    .gadgets {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .gadget-card {
+      background: var(--glass);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 25px;
+      text-align: center;
+      transition: 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gadget-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.15), transparent);
+      transform: translateX(-100%);
+      transition: 0.6s;
+    }
+
+    .gadget-card:hover::before {
+      transform: translateX(100%);
+    }
+
+    .gadget-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 0 30px rgba(255,255,255,0.15);
+    }
+
+    .gadget-icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .gadget-card h3 {
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .gadget-card p {
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 30px 20px;
+      opacity: 0.85;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+
+    /* Page sections hidden except active */
+    .page {
+      display: none;
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #000;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.4s;
+      }
+
+      .nav-links.open {
+        max-height: 400px;
+        padding: 20px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links a {
+        padding: 12px 0;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <div class="logo" data-page="home" style="cursor:pointer;">
+    <img src="images/logo.png" alt="Voxio Logo" style="height:100px; max-width:260px;">
+    </div>
+    <div class="menu-toggle" id="menuToggle">☰</div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#" data-page="home">Home</a>
+      <a href="#" data-page="info">Info</a>
+      <a href="#" data-page="specs">Specifications</a>
+      <a href="#" data-page="about">About Voxio</a>
+      <a href="#" data-page="connect">Connect Voxio</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HOME -->
+  <section class="page active" id="home">
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Smart Gadgets.<br>Modern Life.</h1>
+        <p>Welcome to <strong>Voxio</strong> — your destination for innovative, stylish, and high-performance tech gadgets. Explore our curated collection designed to elevate your daily lifestyle.</p>
+        <a href="#" class="cta-btn" data-page="info">Explore Gadgets</a>
+      </div>
+      <div class="hero-img">
+        <!-- Placeholder for product image or carousel -->
+        <img src="images/hero-img.png" alt="Voxio Product">
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO -->
+  <section class="page" id="info">
+    <h2 style="margin-bottom: 40px; color: var(--primary);">Our Featured Gadgets</h2>
+    <div class="gadgets">
+      <div class="gadget-card">
+        <div class="gadget-icon">🎧</div>
+        <h3>Headphones</h3>
+        <p>Premium sound quality, deep bass, noise isolation, and modern design for immersive listening anywhere.</p>
+      </div>
+      <div class="gadget-card">
+        <div class="gadget-icon">⌚</div>
+        <h3>Smartwatch</h3>
+        <p>Track your health, fitness, notifications, and lifestyle with intelligent wearable technology.</p>
+      </div>
+      <div class="gadget-card">
+        <div class="gadget-icon">🎵</div>
+        <h3>Earbuds</h3>
+        <p>Compact, wireless, powerful sound with comfort and convenience for everyday use.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIFICATIONS -->
+  <section class="page" id="specs">
+    <h2 style="margin-bottom: 40px; color: var(--primary);">Product Specifications</h2>
+    <div class="gadgets">
+      <div class="gadget-card">
+        <h3>Headphones</h3>
+        <p><strong>Battery:</strong> Up to 30 hours<br>
+           <strong>Connectivity:</strong> Bluetooth 5.3<br>
+           <strong>Features:</strong> Noise Cancellation, Fast Charging, HD Audio</p>
+      </div>
+      <div class="gadget-card">
+        <h3>Smartwatch</h3>
+        <p><strong>Display:</strong> AMOLED Touchscreen<br>
+           <strong>Sensors:</strong> Heart Rate, SpO2, Sleep Tracking<br>
+           <strong>Battery:</strong> 7 Days Usage</p>
+      </div>
+      <div class="gadget-card">
+        <h3>Earbuds</h3>
+        <p><strong>Battery:</strong> 20 Hours with Case<br>
+           <strong>Connectivity:</strong> Bluetooth 5.2<br>
+           <strong>Features:</strong> Touch Control, Noise Reduction</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="page" id="about">
+    <h2 style="margin-bottom: 30px; color: var(--primary);">About Voxio</h2>
+    <p style="line-height: 1.8; opacity: 0.9; max-width: 800px;">
+      Voxio is a modern tech brand founded by <strong>Towhid</strong>, focused on delivering innovative gadgets that combine performance, style, and affordability. Our mission is to empower people through smart technology that fits seamlessly into everyday life. We believe in quality, design excellence, and customer satisfaction.
+    </p>
+  </section>
+
+  <!-- CONNECT -->
+  <section class="page" id="connect">
+    <h2 style="margin-bottom: 30px; color: var(--primary);">Connect With Voxio</h2>
+    <p style="margin-bottom: 20px; opacity: 0.9;">Have questions or want to learn more about our gadgets? Reach out to us anytime.</p>
+
+    <div class="gadgets">
+      <div class="gadget-card">
+        <h3>Email</h3>
+        <p>support@voxio.com</p>
+      </div>
+      <div class="gadget-card">
+        <h3>Social Media</h3>
+        <p>Facebook · Instagram · Twitter</p>
+      </div>
+      <div class="gadget-card">
+        <h3>Location</h3>
+        <p>Online Store — Worldwide Shipping</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Voxio — Designed for the Future of Tech</p>
+</footer>
+
+<script>
+  const links = document.querySelectorAll('[data-page]');
+  const pages = document.querySelectorAll('.page');
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  links.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = link.getAttribute('data-page');
+      pages.forEach(page => page.classList.remove('active'));
+      document.getElementById(target).classList.add('active');
+      navLinks.classList.remove('open');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voxio | Premium Tech Gadgets</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">V</div>
+                    <span class="logo-text">Voxio</span>
+                </a>
+                
+                <button class="menu-toggle" id="menuToggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="info.html">Info</a></li>
+                    <li><a href="specifications.html">Specifications</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="connect.html">Connect</a></li>
+                    <li class="nav-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title animate-fade-up">
+                <span class="gradient-text">Elevate Your</span>
+                <span class="gradient-text">Tech Experience</span>
+            </h1>
+            <p class="hero-subtitle animate-fade-up delay-200">Premium gadgets designed for the modern lifestyle</p>
+            <a href="info.html" class="btn btn-primary animate-fade-up delay-400">Explore Products</a>
+        </div>
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('images/headphones-hero.jpg');"></div>
+            <div class="slide" style="background-image: url('images/smartwatch-hero.jpg');"></div>
+            <div class="slide" style="background-image: url('images/earbuds-hero.jpg');"></div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Products</h2>
+                <p class="section-subtitle">Discover our premium collection of tech gadgets</p>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card animate-on-scroll">
+                    <div class="product-image">
+                        <img src="images/product1.jpg" alt="Voxio Overdrive Headphones">
+                        <div class="product-overlay">
+                            <a href="info.html#headphones" class="btn btn-outline">View Details</a>
+                        </div>
+                        <div class="product-badge">Best Seller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Voxio Overdrive</h3>
+                        <p class="product-category">Premium Headphones</p>
+                        <p class="product-description">Noise-cancelling over-ear headphones with 40hr battery life</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="rating-value">4.7</span>
+                        </div>
+                        <div class="product-price">$249.99</div>
+                        <a href="#" class="btn btn-sm btn-primary">Buy on Amazon</a>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card animate-on-scroll">
+                    <div class="product-image">
+                        <img src="images/product2.jpg" alt="Voxio Chrono Smartwatch">
+                        <div class="product-overlay">
+                            <a href="info.html#smartwatches" class="btn btn-outline">View Details</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Voxio Chrono</h3>
+                        <p class="product-category">Smartwatch</p>
+                        <p class="product-description">Advanced health monitoring with 2-week battery life</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span class="rating-value">4.3</span>
+                        </div>
+                        <div class="product-price">$199.99</div>
+                        <a href="#" class="btn btn-sm btn-primary">Buy on eBay</a>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card animate-on-scroll">
+                    <div class="product-image">
+                        <img src="images/product3.jpg" alt="Voxio Pulse Earbuds">
+                        <div class="product-overlay">
+                            <a href="info.html#earbuds" class="btn btn-outline">View Details</a>
+                        </div>
+                        <div class="product-badge">New</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Voxio Pulse</h3>
+                        <p class="product-category">Wireless Earbuds</p>
+                        <p class="product-description">True wireless earbuds with adaptive sound technology</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="rating-value">4.9</span>
+                        </div>
+                        <div class="product-price">$129.99</div>
+                        <a href="#" class="btn btn-sm btn-primary">Buy on Walmart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Voxio</h2>
+                <p class="section-subtitle">Premium quality meets innovative design</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="feature-title">Premium Quality</h3>
+                    <p class="feature-description">All our products are crafted with high-grade materials and undergo rigorous quality testing.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="feature-title">Dedicated Support</h3>
+                    <p class="feature-description">Our customer support team is available 24/7 to assist with any questions or issues.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 class="feature-title">Fast Shipping</h3>
+                    <p class="feature-description">We partner with trusted carriers to ensure your products arrive quickly and safely.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3 class="feature-title">2-Year Warranty</h3>
+                    <p class="feature-description">All Voxio products come with a comprehensive 2-year manufacturer warranty.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo footer-logo">
+                        <div class="logo-icon">V</div>
+                        <span class="logo-text">Voxio</span>
+                    </a>
+                    <p class="footer-description">Elevating everyday life through innovative technology and premium design.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="info.html#headphones">Headphones</a></li>
+                        <li><a href="info.html#smartwatches">Smartwatches</a></li>
+                        <li><a href="info.html#earbuds">Earbuds</a></li>
+                        <li><a href="specifications.html">Specifications</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Voxio</a></li>
+                        <li><a href="connect.html">Contact Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Where to Buy</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Amazon</a></li>
+                        <li><a href="#">Walmart</a></li>
+                        <li><a href="#">Best Buy</a></li>
+                        <li><a href="#">eBay</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Voxio. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p class="footer-note">Voxio is an online gadget and tech brand. This website is for informational purposes only.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

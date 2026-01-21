@@ -1805,3 +1805,123 @@ textarea.form-control {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== 404 PAGE ONLY ===== */
+
+.error-404 {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Box */
+.error-404 .error-box {
+  background: #111111;
+  padding: 40px;
+  width: 90%;
+  max-width: 600px;
+
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Text */
+.error-404 h1 {
+  font-size: 80px;
+  color: #ffffff;
+}
+
+.error-404 h2 {
+  margin: 10px 0;
+  color: #cccccc;
+}
+
+.error-404 p {
+  color: #9a9a9a;
+  margin-bottom: 20px;
+}
+
+/* Slider */
+.error-404 .slider {
+  height: 220px;
+  width: 100%;
+  margin: 20px auto;
+
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+
+  animation: slider404 10s linear infinite;
+}
+
+/* Animation */
+@keyframes slider404 {
+  0%   { background-image: url("1.jpg"); }
+  25%  { background-image: url("2.jpg"); }
+  50%  { background-image: url("3.jpg"); }
+  75%  { background-image: url("4.jpg"); }
+  100% { background-image: url("5.jpg"); }
+}
+
+/* Button */
+.error-404 .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+
+  background: #000000;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 30px;
+  border: 1px solid #333;
+
+  transition: 0.3s ease;
+}
+
+.error-404 .btn:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+
+
+/* Secondary Colorful Button */
+.error-404 .btn-alt {
+  margin-top: 12px;
+
+  background: linear-gradient(135deg, #6a5af9, #00d2ff);
+  color: #ffffff;
+
+  border: none;
+  box-shadow: 0 8px 20px rgba(0, 210, 255, 0.35);
+}
+
+.error-404 .btn-alt:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(106, 90, 249, 0.45);
+}

@@ -1,12 +1,39 @@
+media:
+  input: images
+  output: /images
+
 content:
   - name: products
     label: Products
-    path: data/products.json
-    type: file   # single file
-    format: json
+    label_singular: Product
+    type: collection
+    path: data/products
+    create: true
+    format: yaml-frontmatter
+    filename: "{{slug}}.md"
     fields:
-      # fields array of objects
       - name: title
-        label: Title
+        label: Product Title
         type: string
-      # etc, but for array, it's a bit different – Pages CMS list support করে
+        required: true
+      - name: description
+        label: Description
+        type: markdown
+        required: true
+      - name: image
+        label: Product Image
+        type: image
+        required: true
+      - name: price
+        label: Price (BDT)
+        type: number
+      - name: specs
+        label: Specifications
+        type: list
+        fields:
+          - name: key
+            label: Spec Name (e.g. Battery, Display)
+            type: string
+          - name: value
+            label: Value
+            type: string

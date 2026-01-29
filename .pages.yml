@@ -1,0 +1,38 @@
+media:
+  input: images          # তোমার images folder যেখানে product1.jpg ইত্যাদি আছে
+  output: /images        # site-এ URL হবে /images/product1.jpg
+
+content:
+  - name: products
+    label: Products
+    label_singular: Product
+    type: collection
+    path: data/products    # products ফাইলগুলো এই folder-এ সেভ হবে (যেমন data/products/smartwatch.md)
+    create: true           # নতুন product add করার অপশন
+    format: yaml-frontmatter  # Markdown ফাইল + YAML frontmatter (সহজে JS-এ parse করা যায়)
+    fields:
+      - name: title
+        label: Product Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: markdown       # rich text editor (bold, list ইত্যাদি)
+        required: true
+      - name: image
+        label: Main Product Image
+        type: image
+        required: true
+      - name: price
+        label: Price (BDT)
+        type: number
+      - name: specs
+        label: Specifications (e.g. Battery, Display)
+        type: list
+        fields:
+          - name: key
+            label: Spec Name
+            type: string
+          - name: value
+            label: Value
+            type: string
